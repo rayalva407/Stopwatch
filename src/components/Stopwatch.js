@@ -1,10 +1,15 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 
-function Stopwatch({ count }) {
+function Stopwatch({ seconds, setSeconds, setStart }) {
 
   return (
     <div>
-      <p>{count}</p>
+      <p>{seconds}</p>
+      <div>
+        <button onClick={() => setStart(true)}>Start</button>
+        <button onClick={() => setStart(false)}>Stop</button>
+        <button onClick={() => setSeconds(0)}>Reset</button>
+      </div>
     </div>
   )
 }

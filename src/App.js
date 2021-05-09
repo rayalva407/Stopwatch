@@ -4,11 +4,12 @@ import Stopwatch from './components/Stopwatch'
 
 function App() {
 
-  const [count, setCount] = useState(0)
+  const [seconds, setSeconds] = useState(0)
+  const [start, setStart] = useState(false)
 
   useEffect(() => {
     const stopwatch = setInterval(() => {
-      setCount(count + 1);
+      setSeconds(seconds + 1);
     }, 1000);
 
     return() => clearInterval(stopwatch)
@@ -17,7 +18,7 @@ function App() {
   return (
     <div className="App">
       <h1>Stopwatch</h1>
-      <Stopwatch count={count} />
+      <Stopwatch seconds={seconds} start={start} setSeconds={setSeconds} setStart={setStart} />
     </div>
   );
 }
